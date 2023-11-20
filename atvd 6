@@ -1,0 +1,46 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <locale.h>
+
+int main(){
+    setlocale(LC_ALL, "portuguese");
+    
+    char banda [3][200];
+    char integrante[3][5][200];
+    int i, j;
+   	
+
+    for(i = 0; i < 3; i++){
+        printf("Digite o nome da -Banda- : \n");
+        gets(banda[i]);
+        
+        for(j = 0; j < 5; j++){
+            printf("Digite o nome do %dº integrante:\n " ,j + 1);
+            gets(integrante[i][j]);
+            
+        }
+   		 
+   		fflush(stdin); 
+    }
+    system("cls || clear");
+    //exibindo dados
+    
+   	
+    
+    printf("\nExibindo as informações das Bandas escolhidas... \n");
+    
+    for(i = 0; i < 3; i++){
+        printf("\n Nome da Banda:  --%s-- \n" ,banda[i]);
+        for(j = 0; j < 5; j++){
+            printf("\n %dº Integrante: ~%s~ \n", j + 1 ,integrante[i][j]);
+        }
+        
+    }
+    
+   
+    
+    
+    
+    return 0;
+}

@@ -1,0 +1,50 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <locale.h>
+
+int main(){
+    setlocale(LC_ALL, "portuguese");
+    
+    int i ,j;
+    float mediaP[3];
+    float multi = 0;
+    char disciplina[3][200];
+    float nota[3][3];
+
+
+    for (i = 0; i < 3; i++)
+    {
+        printf("Digite o nome da -Disciplina-: ");
+        gets(disciplina[i]);
+
+        for (j = 0; j < 3; j++)
+        {
+        printf("Digite a %dº nota: " ,j+ 1);
+        scanf("%f" ,&nota[i][j]);
+
+        multi = (nota[i][j] * 3) + (nota[i][j] * 3) + (nota[i][j] * 4);
+        }
+
+        mediaP[i] = multi / 10;
+        multi = 0;
+
+        fflush(stdin);
+    }  
+    system("cls || clear");
+    //exibindo
+
+    for ( i = 0; i < 3; i++)
+    {
+        printf("\n Nome da -Disciplina- : ~%s~ \n" ,disciplina[i]);
+
+        for ( j = 0; j < 3; j++)
+        {
+            printf("\n%dº Nota: %.1f \n" ,j + 1, nota[i][j]);
+        }
+        
+        printf("\nMédia: %.1f" ,mediaP[i]);
+    }
+
+    return 0;
+}
